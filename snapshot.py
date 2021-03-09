@@ -6,6 +6,9 @@ from datetime import datetime
 #Insantiate the camera
 pi_cam = PiCamera()
 
+#rotate due to mounting limitations
+pi_cam.rotation = 90
+
 #Take a photo each minute for 12 hours
 for i in range(720):
 
@@ -21,5 +24,6 @@ for i in range(720):
     sleep(60)
 
     #camera capture
-    camera.capture('/home/pi/Desktop/snapshotpics/snap_' + formatted_time)
+    file_name_date_component = current_time.strftime("%H_%M")
+    camera.capture('/home/pi/Desktop/snapshotpics/snap_' + file_name_date_component + '.jpg')
 
