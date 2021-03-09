@@ -2,6 +2,10 @@ from picamera import PiCamera, Color
 from time import sleep
 from datetime import datetime
 
+'''
+This is a very basic script that takes a photo every 60 seconds for 12 hours.
+The intended use of this script will be to compile all of the photos into a timelapse video.
+'''
 
 #Insantiate the camera
 pi_cam = PiCamera()
